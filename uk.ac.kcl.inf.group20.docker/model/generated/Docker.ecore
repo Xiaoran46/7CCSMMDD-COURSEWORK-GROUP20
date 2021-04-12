@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="docker" nsURI="http://www.ac.uk/kcl/inf/group20/docker/Docker"
+    nsPrefix="docker">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statements" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveImageStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="removeimageOptions" unique="false"
+        upperBound="-1" eType="#//RemoveImageOptions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RemoveImageOptions">
+    <eLiterals name="force" literal="force"/>
+    <eLiterals name="no_remove_process_image" value="1" literal="no_remove_process_image"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageOptions" upperBound="-1"
+        eType="#//ImageOptions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiffStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CpStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="#//LinkOption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//SourceOption"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="destination" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LinkOption">
+    <eLiterals name="no_maintain_link" literal="no_maintain_link"/>
+    <eLiterals name="maintain_link" value="1" literal="maintain_link"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SourceOption">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option2" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commitOptions" upperBound="-1"
+        eType="#//CommitOptions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repository" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommitOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="private_port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExportStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="file_path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaitStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogsStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logOptions" upperBound="-1"
+        eType="#//LogOptions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventOptions" upperBound="-1"
+        eType="#//EventOptions" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeU" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SigOption">
+    <eLiterals name="False" literal="False"/>
+    <eLiterals name="True" value="1" literal="True"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttachStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attachOption" eType="#//AttachOption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AttachOption">
+    <eLiterals name="detach_keys" literal="detach_keys"/>
+    <eLiterals name="no_stdin" value="1" literal="no_stdin"/>
+    <eLiterals name="sig_proxy_true" value="2" literal="sig_proxy_true"/>
+    <eLiterals name="sig_proxy_false" value="3" literal="sig_proxy_false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InspectStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inspectOptions" upperBound="-1"
+        eType="#//InspectOptions" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InspectOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PsStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="psOptions" upperBound="-1"
+        eType="#//PsOptions" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PsOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="n" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="execOptions" unique="false"
+        upperBound="-1" eType="#//ExecOption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExecOption">
+    <eLiterals name="backstage" literal="backstage"/>
+    <eLiterals name="open_STDIN" value="1" literal="open_STDIN"/>
+    <eLiterals name="terminate" value="2" literal="terminate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnpauseStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PauseStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RestartStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StopStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="KillStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kill" eType="#//KillOption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="KillOption">
+    <eLiterals name="kill" literal="kill"/>
+    <eLiterals name="kill_sign" value="1" literal="kill_sign"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rmOptions" eType="#//RmOptions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RmOptions">
+    <eLiterals name="no_option" literal="no_option"/>
+    <eLiterals name="force" value="1" literal="force"/>
+    <eLiterals name="delete_link" value="2" literal="delete_link"/>
+    <eLiterals name="delete_volume" value="3" literal="delete_volume"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunCreateStatement" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="#//RunorCreate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="runOptions" upperBound="-1"
+        eType="#//RunOption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="#//Image"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commands" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RunorCreate">
+    <eLiterals name="run" literal="run"/>
+    <eLiterals name="create" value="1" literal="create"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Image">
+    <eLiterals name="Ubuntu" literal="Ubuntu"/>
+    <eLiterals name="Centos" value="1" literal="Centos"/>
+    <eLiterals name="Nginx" value="2" literal="Nginx"/>
+    <eLiterals name="PHP" value="3" literal="PHP"/>
+    <eLiterals name="Apache" value="4" literal="Apache"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunOption">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outType" eType="#//OutType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="portName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="server" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="environmentVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setEnvironmentVariable"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerName" eType="#//ContainerNameDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerNameDeclaration" eSuperTypes="#//Statements">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OutType">
+    <eLiterals name="IN" literal="IN"/>
+    <eLiterals name="OUT" value="1" literal="OUT"/>
+    <eLiterals name="ERR" value="2" literal="ERR"/>
+  </eClassifiers>
+</ecore:EPackage>
