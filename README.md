@@ -128,9 +128,107 @@ Grammar：
   
   <img width="602" alt="figure7" src="https://user-images.githubusercontent.com/57056248/114558322-21744a80-9c9d-11eb-9f47-70996357f22f.png">
 
+-Event Statement:
+  
+  Docker version
+  
+    "docker events [OPTIONS]"
+  
+  Abstract version：
+    
+    "events' eventOptions += EventOptions+"
+  
+  events options:
+  
+  <img width="602" alt="figure7" src="https://user-images.githubusercontent.com/57056248/114564891-55526e80-9ca3-11eb-873e-ecfef67c82ca.png">
 
+-Logs Statement:
+  
+  Docker version
+  
+    "docker logs [OPTIONS] CONTAINER"
+  
+  Abstract version：
+    
+    "logs logOptions += LogOptions* containerName = [ContainerNameDeclaration]"
+  
+  logs options:
+  
+ <img width="608" alt="figure9" src="https://user-images.githubusercontent.com/57056248/114565645-0d801700-9ca4-11eb-8436-1d060a37bdde.png">
 
+-Wait/Export/Port/Difference Statement
 
+  Docker version
+  
+    "docker wait [OPTIONS] CONTAINER [CONTAINER...]"
+    "docker export [OPTIONS] CONTAINER"
+    "docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]"
+    "docker diff [OPTIONS] CONTAINER"
+  
+  Abstract version：
+    
+    "wait containerName = [ContainerNameDeclaration]"
+    "export file_path = STRING containerName = [ContainerNameDeclaration]"
+    "port containerName = [ContainerNameDeclaration] private_port=STRING"
+    "check_different' containerName = [ContainerNameDeclaration]"
+
+-Commit Statement:
+  
+  Docker version
+  
+    "docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]"
+  
+  Abstract version：
+    
+    "commit commitOptions += CommitOptions* containerName = [ContainerNameDeclaration] repository = STRING"
+  
+  Commit options:
+  
+ <img width="600" alt="figure10" src="https://user-images.githubusercontent.com/57056248/114568395-aa43b400-9ca6-11eb-9928-73662d995cb1.png">
+
+-Copy Statement:
+  
+  Docker version
+  
+    "docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-"
+  
+  Abstract version：
+    
+    "copy link = LinkOption source=SourceOption destination = STRING"
+  
+  link options:
+  
+ <img width="603" alt="figure11" src="https://user-images.githubusercontent.com/57056248/114569779-d7449680-9ca7-11eb-9348-44f25a98b2be.png">
+
+  SourceOption: option = STRING | [ContainerNameDeclaration]	
+  
+-Image Statement:
+  
+  Docker version
+  
+    "docker images [OPTIONS] [REPOSITORY[:TAG]]"
+  
+  Abstract version：
+    
+    "image imageOptions += ImageOptions* repository = STRING"
+  
+  Image options:
+  
+ <img width="606" alt="figure12" src="https://user-images.githubusercontent.com/57056248/114571254-1b846680-9ca9-11eb-9492-841499c2c094.png">
+
+-Remove Image Statement:
+  
+  Docker version
+  
+    "docker rmi [OPTIONS] IMAGE [IMAGE...]"
+  
+  Abstract version：
+    
+    "removeImg removeimageOptions += RemoveImageOptions* image = STRING"
+  
+  Remove Image options:
+  
+ <img width="604" alt="截屏2021-04-13 下午10 42 36" src="https://user-images.githubusercontent.com/57056248/114572023-b54c1380-9ca9-11eb-807b-0ac0fd1e88ee.png">
 
 
 
