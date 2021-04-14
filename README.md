@@ -1,11 +1,20 @@
 # MDD_Group20
-## 运行步骤：
+## Import project:
+- 1. Import "uk.ac.kcl.inf.group20.docker", "uk.ac.kcl.inf.group20.docker.ide", "uk.ac.kcl.inf.group20.docker.tests", "uk.ac.kcl.inf.group20.docker.ui" and "uk.ac.kcl.inf.group20.docker.ui.tests" into Eclipse. 
+- 2. Run project "uk.ac.kcl.inf.group20.docker" as Eclipse Application. This will automatically open a new runtime Eclipse.
 
-- 1. 用户将“uk.ac.kcl.inf.group20.docker”，“uk.ac.kcl.inf.group20.docker.ide”，“uk.ac.kcl.inf.group20.docker.tests”, “uk.ac.kcl.inf.group20.docker.ui” 和 “uk.ac.kcl.inf.group20.docker.ui.tests”
-- 2. 用户运行“uk.ac.kcl.inf.group20.docker”文件，然后进入到runtime eclipse中
-- 3. 然后导入TestDocker和uk.ac.kcl.inf.group20.docker.xpect
-- 4. 用户根据自己想实现的功能和该DSML的相关语法及语法提示输入自然语言命令
+## Run example projects:
+- 1. Import the example projects "TestDocker" and "uk.ac.kcl.inf.group20.docker.xpect" into runtime Eclipse.
+- 2. The file "test.docker" under the "src" folder of the project "TestDocker" can be modified and tested.
+- 3. Contents in "test1.docker.xt" under the "src" folder of the project "uk.ac.kcl.inf.group20.docker.xpect" are used to test whether the project outputs meet the expectation.
 
+## Create new project:
+- 1. In the runtime Eclipse, create a new Java project. Under the "src" folder, create a new file with name extension ".docker".
+- 2. Select "Yes" if it asks whether to convert the file to an Xtext project. 
+
+## Code generation:
+- 1. After saving the file "test.docker" under the "src" folder of the project "TestDocker", a TXT file which contains corresponding Docker commands should be automatically generated.
+- 2. This TXT file could be found under the "src-gen" folder of the project "TestDocker".
 -----------------
 -----------------
 
