@@ -11,6 +11,7 @@
 ## Create new project:
 - 1. In the runtime Eclipse, create a new Java project. Under the "src" folder, create a new file with name extension ".docker".
 - 2. Select "Yes" if it asks whether to convert the file to an Xtext project. 
+- 3. A container must be declared before using other statements.
 
 ## Code generation:
 - 1. After saving the file "test.docker" under the "src" folder of the project "TestDocker", a TXT file which contains corresponding Docker commands should be automatically generated.
