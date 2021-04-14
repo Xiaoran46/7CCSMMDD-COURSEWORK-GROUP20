@@ -2,7 +2,7 @@
 ## Import project:
 - 1. Import "uk.ac.kcl.inf.group20.docker", "uk.ac.kcl.inf.group20.docker.ide", "uk.ac.kcl.inf.group20.docker.tests", "uk.ac.kcl.inf.group20.docker.ui" and "uk.ac.kcl.inf.group20.docker.ui.tests" into Eclipse. 
 - 2. Run project "uk.ac.kcl.inf.group20.docker" as Eclipse Application. This will automatically open a new runtime Eclipse.
-- 3. If you encounter an error of missing folders in practice, please add the "src" and "xtend-gen" folders to the "uk.ac.kcl.inf.group20.docker.ui.tests" package
+- 3. If you encounter an error of missing folders in practice, please add the "src" and "xtend-gen" folders to the "uk.ac.kcl.inf.group20.docker.ui.tests" package.
 
 ## Run example projects:
 - 1. Import the example projects "TestDocker" and "uk.ac.kcl.inf.group20.docker.xpect" into runtime Eclipse.
