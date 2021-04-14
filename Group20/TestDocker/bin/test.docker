@@ -1,0 +1,136 @@
+//Container name declaration
+var myContainer
+var myContainer1
+
+//Run statement
+run standard IN Apache "Commands"
+run backstage Apache "Commands"
+run interface Apache "Commands"
+run random_port Apache "Commands"
+run specify_port "11.11.11.11:11" Apache "Commands"
+run terminate Apache "Commands"
+run DNS "Server" Apache "Commands"
+run search_DNS "domainName" Apache "Commands"
+run hostname "Hostname" Apache "Commands"
+run environment "environmentVariable" = "setEnvironmentVariable" Apache "Commands"
+run network "connectType" Apache "Commands"
+run name myContainer Apache "Commands"
+
+//Create statement
+create standard IN Apache "Commands"
+create backstage Apache "Commands"
+create interface Apache "Commands"
+create random_port Apache "Commands"
+create specify_port "11.11.11.11:11" Apache "Commands"
+create terminate Apache "Commands"
+create DNS "Server" Apache "Commands"
+create search_DNS "domainName" Apache "Commands"
+create hostname "Hostname" Apache "Commands"
+create environment "environmentVariable" = "setEnvironmentVariable" Apache "Commands"
+create network "connectType" Apache "Commands"
+create name myContainer Apache "Commands"
+
+//Start statement
+start myContainer
+
+//Stop statement
+stop myContainer
+
+//Restart statement
+restart myContainer
+
+//Kill statement
+kill myContainer1
+
+//Remove statement
+remove no_option myContainer
+remove delete_link myContainer
+remove delete_volume myContainer
+remove force myContainer
+remove delete_link myContainer
+
+//Pause statement
+pause myContainer
+
+//Unpause statement
+unpause myContainer
+
+//Exec statement
+execute myContainer "Commands"
+execute backstage myContainer "Commands"
+execute open_STDIN myContainer "Commands"
+execute terminate myContainer "Commands"
+
+//Ps statement
+ps complete 
+ps filter "Commands"
+ps format "Formats"
+ps list_last_n_containers 1
+ps only_show_id
+ps show_all_containers
+ps show_container
+ps show_last_container
+ps show_size   
+
+//Inspect statement
+inspect format "Formats"
+inspect show_size
+inspect type "Types"
+
+//Attach statement
+attach detach_keys myContainer
+attach no_stdin myContainer
+attach sig_proxy_false myContainer
+attach sig_proxy_true myContainer
+
+//Event statement
+events filter "Commands"
+events since "timeS"
+events until "timeU"
+
+//Logs statement
+logs myContainer
+logs show_tail_n_logs 1 myContainer
+logs show_timestamp myContainer
+logs since "21-04-15" myContainer
+logs track_output myContainer
+
+//Wait statement
+wait myContainer
+
+//Export statement
+export "File_path" myContainer
+
+//Port statement
+port myContainer "11.11.11.11:11"
+
+//Commit statement
+commit myContainer "Repository"
+commit author "Author" myContainer "Repository"
+commit commit_description "Description" myContainer "Repository"
+commit create myContainer "Repository"
+commit pause_when_commit myContainer "Repository"
+
+//Cp statement
+copy maintain_link "Option1" "Destination"
+copy maintain_link myContainer "Destination"
+copy no_maintain_link "Option1" "Destination"
+copy no_maintain_link myContainer "Destination"
+
+//Diff statement
+check_different myContainer
+
+//Image statement
+image "Repository"
+image complete "Repository"
+image filter "Condition" "Repository"
+image format "Formats" "Repository"
+image show_all "Repository"
+image show_digests "Repository"
+image show_ID "Repository"
+
+//Remove image statement
+removeImg "Image"
+removeImg force "Image"
+removeImg no_remove_process_image "Image"
+

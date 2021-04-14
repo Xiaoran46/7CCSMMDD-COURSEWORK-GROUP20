@@ -1,0 +1,88 @@
+
+
+docker run -a stdin Apache Commands
+docker run -d Apache Commands
+docker run -i Apache Commands
+docker run -P Apache Commands
+docker run -p 11.11.11.11:11 Apache Commands
+docker run -t Apache Commands
+docker run --dns Server Apache Commands
+docker run --dns-search domainName Apache Commands
+docker run -h "Hostname" Apache Commands
+docker run -e environmentVariable=setEnvironmentVariable Apache Commands
+docker run --net=connectType Apache Commands
+docker run --name myContainer Apache Commands
+docker create -a stdin Apache Commands
+docker create -d Apache Commands
+docker create -i Apache Commands
+docker create -P Apache Commands
+docker create -p 11.11.11.11:11 Apache Commands
+docker create -t Apache Commands
+docker create --dns Server Apache Commands
+docker create --dns-search domainName Apache Commands
+docker create -h "Hostname" Apache Commands
+docker create -e environmentVariable=setEnvironmentVariable Apache Commands
+docker create --net=connectType Apache Commands
+docker create --name myContainer Apache Commands
+docker start myContainer
+docker stop myContainer
+docker restart myContainer
+docker kill myContainer1
+docker rm myContainer
+docker rm -l myContainer
+docker rm -v myContainer
+docker rm -f myContainer
+docker rm -l myContainer
+docker pause myContainer
+docker unpause myContainer
+docker exec myContainer Commands
+docker exec -d myContainer Commands
+docker exec -i myContainer Commands
+docker exec -t myContainer Commands
+docker ps --no-trunc 
+docker ps -f Commands 
+docker ps --format Formats 
+docker ps -n 1 
+docker ps -q 
+docker ps -a 
+docker ps  
+docker ps -l 
+docker ps -s 
+docker inspect -f Formats 
+docker inspect -s 
+docker inspect --type Types 
+docker attach --detach-keys myContainer
+docker attach --no-stdin myContainer
+docker attach --sig-proxy=false myContainer
+docker attach --sig-proxy=true myContainer
+docker events -f Commands 
+docker events --since timeS 
+docker events --until timeU 
+docker logs myContainer
+docker logs --tail 1 myContainer
+docker logs --t myContainer
+docker logs --since 21-04-15 myContainer
+docker logs -f myContainer
+docker wait myContainer
+docker export --output=File_path myContainer
+docker port myContainer 11.11.11.11:11
+docker commit myContainer Repository
+docker commit -a Author myContainer Repository
+docker commit -m Description myContainer Repository
+docker commit -c myContainer Repository
+docker commit -p myContainer Repository
+docker cp -l Option1 Destination
+docker cp -l myContainer Destination
+docker cp Option1 Destination
+docker cp myContainer Destination
+docker diff myContainer
+docker images Repository
+docker images --no-trunc Repository
+docker images -f Condition Repository
+docker images --format Formats Repository
+docker images -a Repository
+docker images --digests Repository
+docker images -q Repository
+docker rmi Image
+docker rmi -f Image
+docker rmi --no-prune Image

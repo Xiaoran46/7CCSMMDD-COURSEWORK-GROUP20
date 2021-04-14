@@ -1,0 +1,218 @@
+grammar uk.ac.kcl.inf.group20.docker.Docker with org.eclipse.xtext.common.Terminals
+
+generate docker "http://www.ac.uk/kcl/inf/group20/docker/Docker"
+
+Model:
+	statements+=Statements*;
+
+Statements:
+	RunCreateStatement | ContainerNameDeclaration | StartStatement | StopStatement | RestartStatement |
+	KillStatement | RemoveStatement | PauseStatement | UnpauseStatement	| ExecStatement | PsStatement |
+	InspectStatement | AttachStatement | EventStatement | LogsStatement | WaitStatement | ExportStatement |
+	PortStatement | CommitStatement | CpStatement | DiffStatement | ImageStatement | RemoveImageStatement
+;
+
+//Remove image statement
+RemoveImageStatement:
+	'removeImg' removeimageOptions += RemoveImageOptions* image = STRING
+;
+
+//Remove image options
+enum RemoveImageOptions:
+	force | no_remove_process_image
+;
+
+//Image Statement
+ImageStatement:
+	'image' imageOptions += ImageOptions* repository = STRING
+;
+
+//Image options
+ImageOptions:
+	{ImageOptions} option='show_all' | {ImageOptions} option='show_digests' | option='filter' condition = STRING | option='format' formats = STRING | {ImageOptions} option='complete' | {ImageOptions} option='show_ID'
+;
+
+//Difference statement
+DiffStatement:
+	'check_different' containerName = [ContainerNameDeclaration]
+;
+
+//Copy statement
+CpStatement:
+	'copy' link = LinkOption source=SourceOption destination = STRING
+;
+
+enum LinkOption:
+	no_maintain_link | maintain_link
+;
+
+SourceOption:
+	option1 = STRING | option2=[ContainerNameDeclaration]	
+;
+
+//Commit statement
+CommitStatement:
+	'commit' commitOptions += CommitOptions* containerName = [ContainerNameDeclaration] repository = STRING
+;
+
+//Commit options
+CommitOptions:
+	option='author' author = STRING | {CommitOptions} option='create' | option='commit_description' description = STRING | {CommitOptions} option='pause_when_commit'
+;
+
+//Port Statement
+PortStatement:
+	'port' containerName = [ContainerNameDeclaration] private_port=STRING
+;
+
+//Export statement
+ExportStatement:
+	'export' file_path = STRING containerName = [ContainerNameDeclaration]
+;
+
+//Wait statement
+WaitStatement:
+	'wait' containerName = [ContainerNameDeclaration]
+;
+
+//Log statement
+LogsStatement:
+	'logs' logOptions += LogOptions* containerName = [ContainerNameDeclaration]
+;
+
+//Log options
+LogOptions:
+	{LogOptions} option='track_output' | option='since' time = STRING | {LogOptions} option='show_timestamp' | option='show_tail_n_logs' number = INT 
+;
+
+//Event statement
+EventStatement:
+	'events' eventOptions += EventOptions+
+;
+
+//Event options
+EventOptions:
+	option='filter' commands = STRING | option='since' timeS = STRING | option='until' timeU = STRING
+;
+
+//sig-proxy Option
+enum SigOption:
+	False | True
+;
+
+//Attach statement
+AttachStatement:
+	'attach' attachOption = AttachOption containerName = [ContainerNameDeclaration]
+;
+
+enum AttachOption:
+	detach_keys | no_stdin | sig_proxy_true | sig_proxy_false
+;
+
+//Inspect statement
+InspectStatement:
+	'inspect' inspectOptions += InspectOptions+
+;
+
+//Inspect options
+InspectOptions:
+	option='format' formats = STRING | option='show_size' | option='type' types = STRING
+;
+
+//Ps statement
+PsStatement:
+	 'ps' psOptions += PsOptions+
+;
+
+//Ps options
+PsOptions:
+	 option='show_container' | option='show_all_containers' | option='filter' commands = STRING | option='format' formats = STRING | 
+	 option='show_last_container' | option='list_last_n_containers' n=INT | option='complete' | option='only_show_id' | option='show_size'
+;
+
+//Execute statement 
+ExecStatement:
+	'execute' execOptions += ExecOption* containerName = [ContainerNameDeclaration] commands = STRING
+;
+
+//Execute options
+enum ExecOption:
+	backstage | open_STDIN | terminate
+;
+
+//Unpause statement
+UnpauseStatement:
+	'unpause' containerName = [ContainerNameDeclaration]
+;
+
+//Pause statement
+PauseStatement:
+	'pause' containerName = [ContainerNameDeclaration]
+;
+
+//Restart statement
+RestartStatement:
+	'restart' containerName = [ContainerNameDeclaration]
+;
+
+//Stop statement
+StopStatement:
+	'stop' containerName = [ContainerNameDeclaration]
+;
+
+//Start statement
+StartStatement:
+	'start' containerName = [ContainerNameDeclaration]
+;
+
+//Kill statement
+KillStatement:
+	kill=KillOption containerName = [ContainerNameDeclaration] 
+;
+
+enum KillOption:
+	kill | kill_sign
+;
+
+//Remove statement
+RemoveStatement:
+	'remove' rmOptions=RmOptions? containerName = [ContainerNameDeclaration]
+;
+
+//Remove Options in RemoveStatement
+enum RmOptions:
+	no_option | force | delete_link | delete_volume
+;
+
+//Run statement
+RunCreateStatement:
+	order=RunorCreate runOptions += RunOption* image = Image commands = STRING
+;
+
+//Run statement order
+enum RunorCreate:
+	run | create
+;
+
+//Run statement image
+enum Image:
+	Ubuntu | Centos | Nginx | PHP | Apache
+;
+
+//Run option
+RunOption:
+	condition='standard' outType = OutType | {RunOption} condition='backstage' | {RunOption} condition='interface' | {RunOption} condition='random_port' |
+	condition='specify_port' portName = STRING | {RunOption} condition='terminate' | condition='DNS' server = STRING |
+	condition='search_DNS'domainName = STRING | condition='hostname' hostname = STRING |
+	condition='environment' environmentVariable = STRING '=' setEnvironmentVariable = STRING |
+	condition='network' connectType = STRING | condition='name' containerName = [ContainerNameDeclaration]
+;
+
+ContainerNameDeclaration:
+	"var" name = ID
+;
+
+//Out Type in Run Option
+enum OutType:
+	IN | OUT | ERR
+;

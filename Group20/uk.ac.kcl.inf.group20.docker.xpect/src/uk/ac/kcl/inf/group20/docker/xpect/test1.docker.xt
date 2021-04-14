@@ -1,0 +1,266 @@
+/* XPECT_SETUP uk.ac.kcl.inf.group20.docker.xpect.XPectTests END_SETUP*/
+/*
+XPECT generated ---
+
+
+docker run -a stdin Apache Commands
+docker run -d Apache Commands
+docker run -i Apache Commands
+docker run -P Apache Commands
+docker run -p 11.11.11.11:11 Apache Commands
+docker run -t Apache Commands
+docker run --dns Server Apache Commands
+docker run --dns-search domainName Apache Commands
+docker run -h "Hostname" Apache Commands
+docker run -e environmentVariable=setEnvironmentVariable Apache Commands
+docker run --net=connectType Apache Commands
+docker run --name myContainer Apache Commands
+docker create -a stdin Apache Commands
+docker create -d Apache Commands
+docker create -i Apache Commands
+docker create -P Apache Commands
+docker create -p 11.11.11.11:11 Apache Commands
+docker create -t Apache Commands
+docker create --dns Server Apache Commands
+docker create --dns-search domainName Apache Commands
+docker create -h "Hostname" Apache Commands
+docker create -e environmentVariable=setEnvironmentVariable Apache Commands
+docker create --net=connectType Apache Commands
+docker create --name myContainer Apache Commands
+docker start myContainer
+docker stop myContainer
+docker restart myContainer
+docker kill myContainer1
+docker rm myContainer
+docker rm -l myContainer
+docker rm -v myContainer
+docker rm -f myContainer
+docker rm -l myContainer
+docker pause myContainer
+docker unpause myContainer
+docker exec myContainer Commands
+docker exec -d myContainer Commands
+docker exec -i myContainer Commands
+docker exec -t myContainer Commands
+docker ps --no-trunc 
+docker ps -f Commands 
+docker ps --format Formats 
+docker ps -n 1 
+docker ps -q 
+docker ps -a 
+docker ps  
+docker ps -l 
+docker ps -s 
+docker inspect -f Formats 
+docker inspect -s 
+docker inspect --type Types 
+docker attach --detach-keys myContainer
+docker attach --no-stdin myContainer
+docker attach --sig-proxy=false myContainer
+docker attach --sig-proxy=true myContainer
+docker events -f Commands 
+docker events --since timeS 
+docker events --until timeU 
+docker logs myContainer
+docker logs --tail 1 myContainer
+docker logs --t myContainer
+docker logs --since 21-04-15 myContainer
+docker logs -f myContainer
+docker wait myContainer
+docker export --output=File_path myContainer
+docker port myContainer 11.11.11.11:11
+docker commit myContainer Repository
+docker commit -a Author myContainer Repository
+docker commit -m Description myContainer Repository
+docker commit -c myContainer Repository
+docker commit -p myContainer Repository
+docker cp -l Option1 Destination
+docker cp -l myContainer Destination
+docker cp Option1 Destination
+docker cp myContainer Destination
+docker diff myContainer
+docker images Repository
+docker images --no-trunc Repository
+docker images -f Condition Repository
+docker images --format Formats Repository
+docker images -a Repository
+docker images --digests Repository
+docker images -q Repository
+docker rmi Image
+docker rmi -f Image
+docker rmi --no-prune Image
+---
+ */
+ 
+//Container name declaration
+var myContainer
+var myContainer1
+
+//Run statement
+run standard IN Apache "Commands"
+run backstage Apache "Commands"
+run interface Apache "Commands"
+run random_port Apache "Commands"
+run specify_port "11.11.11.11:11" Apache "Commands"
+run terminate Apache "Commands"
+run DNS "Server" Apache "Commands"
+run search_DNS "domainName" Apache "Commands"
+run hostname "Hostname" Apache "Commands"
+run environment "environmentVariable" = "setEnvironmentVariable" Apache "Commands"
+run network "connectType" Apache "Commands"
+// XPECT scope at myContainer --> myContainer 
+run name myContainer Apache "Commands"
+
+//Create statement
+create standard IN Apache "Commands"
+create backstage Apache "Commands"
+create interface Apache "Commands"
+create random_port Apache "Commands"
+create specify_port "11.11.11.11:11" Apache "Commands"
+create terminate Apache "Commands"
+create DNS "Server" Apache "Commands"
+create search_DNS "domainName" Apache "Commands"
+create hostname "Hostname" Apache "Commands"
+create environment "environmentVariable" = "setEnvironmentVariable" Apache "Commands"
+create network "connectType" Apache "Commands"
+// XPECT scope at myContainer --> myContainer 
+create name myContainer Apache "Commands"
+
+//Start statement
+// XPECT scope at myContainer --> myContainer 
+start myContainer
+
+//Stop statement
+// XPECT scope at myContainer --> myContainer 
+stop myContainer
+
+//Restart statement
+// XPECT scope at myContainer --> myContainer 
+restart myContainer
+
+//Kill statement
+// XPECT scope at myContainer --> myContainer 
+kill myContainer1
+
+//Remove statement
+// XPECT scope at myContainer --> myContainer 
+remove no_option myContainer
+// XPECT scope at myContainer --> myContainer 
+remove delete_link myContainer
+// XPECT scope at myContainer --> myContainer 
+remove delete_volume myContainer
+// XPECT scope at myContainer --> myContainer 
+remove force myContainer
+// XPECT scope at myContainer --> myContainer 
+remove delete_link myContainer
+
+//Pause statement
+// XPECT scope at myContainer --> myContainer 
+pause myContainer
+
+//Unpause statement
+// XPECT scope at myContainer --> myContainer 
+unpause myContainer
+
+//Exec statement
+// XPECT scope at myContainer --> myContainer 
+execute myContainer "Commands"
+// XPECT scope at myContainer --> myContainer 
+execute backstage myContainer "Commands"
+// XPECT scope at myContainer --> myContainer 
+execute open_STDIN myContainer "Commands"
+// XPECT scope at myContainer --> myContainer 
+execute terminate myContainer "Commands"
+
+//Ps statement
+ps complete 
+ps filter "Commands"
+ps format "Formats"
+ps list_last_n_containers 1
+ps only_show_id
+ps show_all_containers
+ps show_container
+ps show_last_container
+ps show_size   
+
+//Inspect statement
+inspect format "Formats"
+inspect show_size
+inspect type "Types"
+
+//Attach statement
+// XPECT scope at myContainer --> myContainer 
+attach detach_keys myContainer
+// XPECT scope at myContainer --> myContainer 
+attach no_stdin myContainer
+// XPECT scope at myContainer --> myContainer 
+attach sig_proxy_false myContainer
+// XPECT scope at myContainer --> myContainer 
+attach sig_proxy_true myContainer
+
+//Event statement
+events filter "Commands"
+events since "timeS"
+events until "timeU"
+
+//Logs statement
+// XPECT scope at myContainer --> myContainer 
+logs myContainer
+// XPECT scope at myContainer --> myContainer 
+logs show_tail_n_logs 1 myContainer
+// XPECT scope at myContainer --> myContainer 
+logs show_timestamp myContainer
+// XPECT scope at myContainer --> myContainer 
+logs since "21-04-15" myContainer
+// XPECT scope at myContainer --> myContainer 
+logs track_output myContainer
+
+//Wait statement
+// XPECT scope at myContainer --> myContainer 
+wait myContainer
+
+//Export statement
+// XPECT scope at myContainer --> myContainer 
+export "File_path" myContainer
+
+//Port statement
+port myContainer "11.11.11.11:11"
+
+//Commit statement
+// XPECT scope at myContainer --> myContainer 
+commit myContainer "Repository"
+// XPECT scope at myContainer --> myContainer 
+commit author "Author" myContainer "Repository"
+// XPECT scope at myContainer --> myContainer 
+commit commit_description "Description" myContainer "Repository"
+// XPECT scope at myContainer --> myContainer 
+commit create myContainer "Repository"
+// XPECT scope at myContainer --> myContainer 
+commit pause_when_commit myContainer "Repository"
+
+//Cp statement
+copy maintain_link "Option1" "Destination"
+// XPECT scope at myContainer --> myContainer 
+copy maintain_link myContainer "Destination"
+copy no_maintain_link "Option1" "Destination"
+// XPECT scope at myContainer --> myContainer 
+copy no_maintain_link myContainer "Destination"
+
+//Diff statement
+// XPECT scope at myContainer --> myContainer 
+check_different myContainer
+
+//Image statement
+image "Repository"
+image complete "Repository"
+image filter "Condition" "Repository"
+image format "Formats" "Repository"
+image show_all "Repository"
+image show_digests "Repository"
+image show_ID "Repository"
+
+//Remove image statement
+removeImg "Image"
+removeImg force "Image"
+removeImg no_remove_process_image "Image"
+ 
