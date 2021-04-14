@@ -6,7 +6,8 @@
 - 3. 然后导入TestDocker和uk.ac.kcl.inf.group20.docker.xpect
 - 4. 用户根据自己想实现的功能和该DSML的相关语法及语法提示输入自然语言命令
 
-----
+-----------------
+-----------------
 
 ## Grammar：
 
@@ -21,9 +22,10 @@
     "order=RunorCreate runOptions += RunOption* image = Image commands = STRING"
   
   >> #### *Run Options*:
+     
+  <img width="601" alt="figure1" src="https://user-images.githubusercontent.com/57056248/114551234-b2472800-9c95-11eb-834f-33929695a718.png" />
   
-  <img width="601" alt="figure1" src="https://user-images.githubusercontent.com/57056248/114551234-b2472800-9c95-11eb-834f-33929695a718.png">
-
+-----------------
 
 > ### Remove Statement:
 
@@ -39,6 +41,7 @@
   
   <img width="605" alt="figure2" src="https://user-images.githubusercontent.com/57056248/114551725-5fba3b80-9c96-11eb-900c-509a4da9a13f.png">
 
+-----------------
 
 > ### Start/Stop/Restart/Pause/Unpause Statement
 
@@ -58,6 +61,7 @@
    + "pause containerName = [ContainerNameDeclaration]"
    + "unpause containerName = [ContainerNameDeclaration]"
  
+-----------------
 
 > ### Kill Statement:
   
@@ -73,6 +77,8 @@
   
   <img width="603" alt="figure3" src="https://user-images.githubusercontent.com/57056248/114554276-1cad9780-9c99-11eb-99c5-212ffcf1d31a.png">
 
+-----------------
+
 > ### Execute Statement:
   
   >> #### *Docker version*:
@@ -86,6 +92,8 @@
   >> #### *Execute options*:
   
   <img width="604" alt="figure4" src="https://user-images.githubusercontent.com/57056248/114554364-3c44c000-9c99-11eb-93a8-f3cb6a5a4b76.png">
+
+-----------------
 
 > ### Ps Statement:
   
@@ -101,6 +109,8 @@
   
   <img width="605" alt="figure5" src="https://user-images.githubusercontent.com/57056248/114555500-57fc9600-9c9a-11eb-990e-a0057553fdf6.png">
   
+-----------------
+
 > ### Inspect Statement:
   
   >> #### *Docker version*:
@@ -115,6 +125,8 @@
   
   <img width="603" alt="figure6" src="https://user-images.githubusercontent.com/57056248/114557511-546a0e80-9c9c-11eb-8c42-2696c6018ed5.png">
  
+-----------------
+
 > ### Attach Statement:
   
   >> #### *Docker version*:
@@ -128,6 +140,8 @@
  >>  #### *Attach options*:
   
   <img width="602" alt="figure7" src="https://user-images.githubusercontent.com/57056248/114558322-21744a80-9c9d-11eb-9f47-70996357f22f.png">
+
+-----------------
 
 > ### Event Statement:
   
@@ -143,6 +157,8 @@
   
   <img width="602" alt="figure7" src="https://user-images.githubusercontent.com/57056248/114564891-55526e80-9ca3-11eb-873e-ecfef67c82ca.png">
 
+-----------------
+
 > ### Logs Statement:
   
   >> #### *Docker version*:
@@ -156,6 +172,8 @@
   >> #### *Logs options*:
   
  <img width="608" alt="figure9" src="https://user-images.githubusercontent.com/57056248/114565645-0d801700-9ca4-11eb-8436-1d060a37bdde.png">
+
+-----------------
 
 > ### Wait/Export/Port/Difference Statement
 
@@ -173,6 +191,8 @@
    + "port containerName = [ContainerNameDeclaration] private_port=STRING"
    + "check_different' containerName = [ContainerNameDeclaration]"
 
+-----------------
+
 > ### Commit Statement:
   
   >> #### *Docker version*:
@@ -186,6 +206,8 @@
   >> #### *Commit options*:
   
  <img width="600" alt="figure10" src="https://user-images.githubusercontent.com/57056248/114568395-aa43b400-9ca6-11eb-9928-73662d995cb1.png">
+
+-----------------
 
 > ### Copy Statement:
   
@@ -203,6 +225,8 @@
 
   SourceOption: option = STRING | [ContainerNameDeclaration]	
   
+-----------------
+
 > ### Image Statement:
   
   >> #### *Docker version*:
@@ -216,6 +240,8 @@
   >> #### *Image options*:
   
  <img width="606" alt="figure12" src="https://user-images.githubusercontent.com/57056248/114571254-1b846680-9ca9-11eb-9492-841499c2c094.png">
+
+-----------------
 
 > ### Remove Image Statement:
   
