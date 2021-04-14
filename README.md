@@ -1,4 +1,4 @@
-# MDD_Group20
+# 7CCSMMDD-COURSEWORK-GROUP20
 ## Import project:
 - 1. Import "uk.ac.kcl.inf.group20.docker", "uk.ac.kcl.inf.group20.docker.ide", "uk.ac.kcl.inf.group20.docker.tests", "uk.ac.kcl.inf.group20.docker.ui" and "uk.ac.kcl.inf.group20.docker.ui.tests" into Eclipse. 
 - 2. Run project "uk.ac.kcl.inf.group20.docker" as Eclipse Application. This will automatically open a new runtime Eclipse.
