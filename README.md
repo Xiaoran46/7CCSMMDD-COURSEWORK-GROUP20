@@ -16,7 +16,7 @@
   
     "docker run [OPTIONS] IMAGE [COMMAND] [ARG...]"
     
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
   
     "order=RunorCreate runOptions += RunOption* image = Image commands = STRING"
   
@@ -31,7 +31,7 @@
   
     "docker rm [OPTIONS] CONTAINER [CONTAINER...]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
   
     "remove rmOptions=RmOptions? containerName = [ContainerNameDeclaration]"
   
@@ -50,7 +50,7 @@
    + "docker pause CONTAINER [CONTAINER...]"
    + "docker unpause CONTAINER [CONTAINER...]"
     
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
   
    + "start containerName = [ContainerNameDeclaration]"
    + "stop containerName = [ContainerNameDeclaration]"
@@ -65,7 +65,7 @@
   
     "docker kill [OPTIONS] CONTAINER [CONTAINER...]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "kill=KillOption containerName = [ContainerNameDeclaration]"
   
@@ -79,7 +79,7 @@
   
     "docker exec [OPTIONS] CONTAINER COMMAND [ARG...]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "execute execOptions += ExecOption* containerName = [ContainerNameDeclaration] commands = STRING"
   
@@ -93,7 +93,7 @@
   
     "docker ps [OPTIONS]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "ps psOptions += PsOptions+"
   
@@ -107,7 +107,7 @@
   
     "docker inspect [OPTIONS] NAME|ID [NAME|ID...]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "inspect inspectOptions += InspectOptions+"
   
@@ -121,7 +121,7 @@
   
     "docker attach [OPTIONS] CONTAINER"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "attach attachOption = AttachOption containerName = [ContainerNameDeclaration]"
   
@@ -135,7 +135,7 @@
   
     "docker events [OPTIONS]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "events' eventOptions += EventOptions+"
   
@@ -149,7 +149,7 @@
   
     "docker logs [OPTIONS] CONTAINER"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "logs logOptions += LogOptions* containerName = [ContainerNameDeclaration]"
   
@@ -166,7 +166,7 @@
    + "docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]"
    + "docker diff [OPTIONS] CONTAINER"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
    + "wait containerName = [ContainerNameDeclaration]"
    + "export file_path = STRING containerName = [ContainerNameDeclaration]"
@@ -179,7 +179,7 @@
   
     "docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "commit commitOptions += CommitOptions* containerName = [ContainerNameDeclaration] repository = STRING"
   
@@ -193,7 +193,7 @@
   
     "docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "copy link = LinkOption source=SourceOption destination = STRING"
   
@@ -209,7 +209,7 @@
   
     "docker images [OPTIONS] [REPOSITORY[:TAG]]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "image imageOptions += ImageOptions* repository = STRING"
   
@@ -223,7 +223,7 @@
   
     "docker rmi [OPTIONS] IMAGE [IMAGE...]"
   
-  >> #### *Abstract version*：
+  >> #### *DSML version*：
     
     "removeImg removeimageOptions += RemoveImageOptions* image = STRING"
   
